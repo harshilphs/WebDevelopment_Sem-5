@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form | 181200116024</title>
+</head>
+<body>
+	<form method="post" action="reg.php" name='registration' onSubmit="return formValidation();">
+		<h1 align="center">Registration Form</h1><br>
+		<table align="center">
+		<tr>
+			<td>Username : </td>
+			<td><input type="text" name="username"></td>
+		</tr>
+		<tr>
+			<td>Email : </td>
+			<td><input type="email" name="email"></td>
+		</tr>
+		<tr>
+			<td>Name : </td>
+			<td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<td>Gender : </td>
+			<td><input type="radio" name="gender" value="Male" /><span>Male</span> <input type="radio" name="gender" value="Female"/><span>Female</span></td>
+		</tr>
+		<tr>
+			<td>Password : </td>
+			<td><input type="Password" name="password"></td>
+		</tr>
+		<tr>
+			<td><a href="login.html">Already Registered ?</a></td>
+			<td><input type="submit" name="submit" value="Submit"> <input type="reset" name="reset" value="Reset"></td>
+		</tr>
+		</table>
+	</form>
+
+	<script type="text/javascript">
+		function formValidation()                                    
+		{ 
+		    var uname = document.forms["registration"]["username"];               
+		    var email = document.forms["registration"]["email"];    
+		    var name = document.forms["registration"]["name"]; 
+		    var gender = document.forms["registration"]["gender"]; 
+		    var password = document.forms["registration"]["password"];  
+ 
+		      
+		   
+		    if (uname.value == "")                                  
+		    { 
+		        window.alert("Please enter your username."); 
+		        uname.focus(); 
+		        return false; 
+		    } 
+		       
+		    if (email.value == "")                                   
+		    { 
+		        window.alert("Please enter a valid e-mail address."); 
+		        email.focus(); 
+		        return false; 
+		    } 
+		   
+		    if (name.value == "")                           
+		    { 
+		        window.alert("Please enter your name."); 
+		        name.focus(); 
+		        return false; 
+		    } 
+		   
+			if (gender.value == "") 
+			{
+				alert('You must select male or female');
+				return false;
+			}
+			   
+		   
+		    if (password.value == "")                  
+		    { 
+		        alert("Please enter password."); 
+		        password.focus(); 
+		        return false; 
+		    } 
+		   
+		    return true; 
+		}
+	</script>
+</body>
+</html>
