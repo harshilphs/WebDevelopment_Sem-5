@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Graph and Slider in JQuery | 181200116024</title>
+<style>
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: white;
+  border: solid 1px black;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+
+</script>
+</head>
+<body>
+<h1 align="center">Graph and Slider in JQuery</h1>
+<div id="flip">Click here to see Graph</div>
+<div id="panel">
+	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+</div>
+
+
+<script type="text/javascript">
+window.onload = function () {
+
+var options = {
+	animationEnabled: true,
+	title: {
+		text: "GDP Growth Rate - 2016"
+	},
+	axisY: {
+		title: "Growth Rate (in %)",
+		suffix: "%"
+	},
+	axisX: {
+		title: "Countries"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#"%"",
+		dataPoints: [
+			{ label: "Iraq", y: 10.09 },	
+			{ label: "Turks & Caicos Islands", y: 9.40 },	
+			{ label: "Nauru", y: 8.50 },
+			{ label: "Ethiopia", y: 7.96 },	
+			{ label: "Uzbekistan", y: 7.80 },
+			{ label: "Nepal", y: 7.56 },
+			{ label: "Iceland", y: 7.20 },
+			{ label: "India", y: 7.1 }
+			
+		]
+	}]
+};
+$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+
+</body>
+</html>
